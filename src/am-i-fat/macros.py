@@ -1,9 +1,16 @@
 # https://healthyeater.com/how-to-calculate-your-macros
 
-def calculateREE(age, gender, height, weight):
+def calculateREE(age, gender, height, weight, scale):
     '''
     calculates Resting Energy Expenditure (REE) using Mifflin-St Jeor formula
     '''
+    if scale == 'i':
+        #converting lbs to kgs and ft to cm
+        weight = weight / 2.205
+        height = height / 2.254
+    elif scale != 'm':
+        raise Exception("Invalid scale parameter. Please enter either \
+            'i' for imperial or 'm' for metric")
     # male version
     if gender == 'm':
         return 10 * weight + 6.25 * height - 5 * age + 5
@@ -45,13 +52,13 @@ def weightLossOrGainCalculator(TDEE, lossOrGain):
     if lossOrGain != 'l' and lossOrGain != 'g':
         raise Exception("Invalid Loss or Gain parameter. Please enter either \
         'l' for loss or 'g' for gain")
-    targetTDEE = TDEE - .2(TDEE) if lossOrGain == 'l' else TDEE + .2(TDEE)
+    targetTDEE = TDEE - .2*TDEE if lossOrGain == 'l' else TDEE + .2*TDEE
     return targetTDEE
 
 def macros(weight, targetTDEE, scale):
 
     if scale == 'm':
-        weight = weight * 2.20462262185
+        weight = weight * 2.205
     elif scale != 'i':
         raise Exception("Invalid scale parameter. Please enter either \
             'i' for imperial or 'm' for metric")
