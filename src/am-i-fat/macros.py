@@ -1,3 +1,5 @@
+# https://healthyeater.com/how-to-calculate-your-macros
+
 def calculateREE(age, gender, height, weight):
     '''
     calculates Resting Energy Expenditure (REE) using Mifflin-St Jeor formula
@@ -33,7 +35,43 @@ def calculateTDEE(REE, userActivityLevel):
     except KeyError:
         raise Exception("Invalid Activity Level parameter. \
             Please enter a number from 1 (sedentary) to 4 (very active))")
+def weightLossOrGainCalculator(TDEE, lossOrGain):
+    '''
+    calculates daily calorie consumption needed to lose or gain based on a user's TDEE
 
-def macros(age, gender, height, weight, activityLevel, goal, scale):
+    lossOrGain parameter is either 'l' or 'g' and indicates whether the user \
+    intends to lose or gain weight(i.e., build muscle)
+    '''
+    if lossOrGain != 'l' and lossOrGain != 'g':
+        raise Exception("Invalid Loss or Gain parameter. Please enter either \
+        'l' for loss or 'g' for gain")
+    targetTDEE = TDEE - .2(TDEE) if lossOrGain == 'l' else TDEE + .2(TDEE)
+    return targetTDEE
 
-    return
+def macros(weight, targetTDEE, scale):
+
+    if scale == 'm':
+        weight = weight * 2.20462262185
+    elif scale != 'i':
+        raise Exception("Invalid scale parameter. Please enter either \
+            'i' for imperial or 'm' for metric")
+    '''
+    calculate ideal macronutrient ratios for a given weight and TDEE
+    '''
+    dailyProteinInGrams = .825 * weight
+    dailyProteinInCalories = dailyProteinInGrams * 4
+
+    dailyFatInCalories = .25 * targetTDEE
+    dailyFatInGrams = dailyFatInCalories / 9
+
+    dailyCarbsInCalories = targetTDEE - dailyFatInCalories - dailyProteinInCalories
+    dailyCarbsInGrams = dailyCarbsInCalories / 4
+
+    # return macro proportions in grams 
+    macroDict = {
+        'Protein Intake': dailyProteinInGrams,
+        'Fat Intake': dailyFatInGrams,
+        'Carb Intake': dailyCarbsInGrams
+    }
+
+    return macroDict
