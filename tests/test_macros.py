@@ -1,4 +1,4 @@
-from macros import *
+from src.amIFat.macros import *
 
 def test_calculateREE():
     # print(10 * 80 + 6.25 * 175 - 5 * 21 + 5)

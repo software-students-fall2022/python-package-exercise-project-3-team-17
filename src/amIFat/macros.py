@@ -1,5 +1,4 @@
 # https://healthyeater.com/how-to-calculate-your-macros
-
 def calculateREE(age, gender, height, weight, scale):
     '''
     calculates Resting Energy Expenditure (REE) using Mifflin-St Jeor formula
