@@ -28,9 +28,9 @@ def howfat(age, height, weight, scale) :
     '''
     Returns the Body Mass Index (BMI) and its corresponding description on the weight scale.
     Arguments taken are age, height, weight and scale.
-    For imperial scale, height argument must be passed in inches. (i.e. 5ft=60)
-    Valid integer values should be passed for age, height and weight or will return an error.
-    Scale argument must be defined by a single string: m (metric) or i (imperial).
+    - Valid integer values should be passed for age, height and weight or will return an error.
+    - For imperial scale, height argument must be passed in inches. (i.e. 5ft=60)
+    - Scale argument must be defined by a single string: "m" (metric) or "i" (imperial).
 
     BMI calculation formula derived from:
     imperial: https://www.cdc.gov/nccdphp/dnpao/growthcharts/training/bmiage/page5_2.html#:~:text=When%20using%20English%20measurements%2C%20ounces,a%20conversion%20factor%20of%20703.
@@ -44,18 +44,15 @@ def howfat(age, height, weight, scale) :
             if (scale == "i"):
                 BMI = round(weight/((height)^2)*703,2)
                 obesity = BMI_scale(BMI)
-                print(BMI)
-                print(obesity)
+                return BMI, obesity
             elif (scale == "m"):
                 BMI = round((weight/height/height)*10000,2)
                 obesity = BMI_scale(BMI)
-                print(BMI)
-                print(obesity)
+                return BMI, obesity
         else:
             print("Please note that BMI for children, teens and seniors may not be accurate.")
             howfat(20, height, weight, scale)
     else:
-        raise ValueError('Please check age, height, weight are integers and scale is i or m')
+        raise Exception('Please check age, height, weight are integer values and scale is "i" or "m"')
         
 
-        
