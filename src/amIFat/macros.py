@@ -1,8 +1,17 @@
 # https://healthyeater.com/how-to-calculate-your-macros
+def validDimensions(height=1, age=1, weight=1):
+    if not 1<=age<=120:
+        raise Exception("Invalid age parameter. Please enter an age between 1 and 120, inclusive")
+    if not 1<height<272:
+        raise Exception("Invalid height parameter. Please enter a height between 1 and 107, inclusive")
+    if not 1<weight<1400:
+        raise Exception("Invalid weight parameter. Please enter a height between 1 and 1400, inclusive")
+
 def calculateREE(age, gender, height, weight, scale):
     '''
     calculates Resting Energy Expenditure (REE) using Mifflin-St Jeor formula
     '''
+    validDimensions(height, age, weight)
     if scale == 'i':
         #converting lbs to kgs and ft to cm
         weight = weight / 2.205
@@ -55,7 +64,7 @@ def weightLossOrGainCalculator(TDEE, lossOrGain):
     return targetTDEE
 
 def macros(weight, targetTDEE, scale):
-
+    validDimensions(weight=weight)
     if scale == 'm':
         weight = weight * 2.205
     elif scale != 'i':
