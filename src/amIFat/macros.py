@@ -2,10 +2,11 @@
 def validDimensions(height=1, age=1, weight=1):
     if not 1<=age<=120:
         raise Exception("Invalid age parameter. Please enter an age between 1 and 120, inclusive")
-    if not 1<height<272:
+    if not 1<=height<=272:
         raise Exception("Invalid height parameter. Please enter a height between 1 and 107, inclusive")
-    if not 1<weight<1400:
+    if not 1<=weight<=1400:
         raise Exception("Invalid weight parameter. Please enter a height between 1 and 1400, inclusive")
+    return True
 
 def calculateREE(age, gender, height, weight, scale):
     '''
@@ -13,9 +14,9 @@ def calculateREE(age, gender, height, weight, scale):
     '''
     validDimensions(height, age, weight)
     if scale == 'i':
-        #converting lbs to kgs and ft to cm
+        #converting lbs to kgs and in to cm
         weight = weight / 2.205
-        height = height / 2.254
+        height = height * 2.54
     elif scale != 'm':
         raise Exception("Invalid scale parameter. Please enter either \
             'i' for imperial or 'm' for metric")
@@ -29,7 +30,7 @@ def calculateREE(age, gender, height, weight, scale):
         raise Exception("invalid gender parameter. Input \
             'm' for male and 'f' for female.")
 
-def calculateTDEE(REE, userActivityLevel):
+def calculateTDEE(REE, userActivityLevel=2):
     '''
     calculates Total Daily Energy Expenditure (TDEE) in 
     calories for a given REE and self-reported activity level
@@ -50,7 +51,7 @@ def calculateTDEE(REE, userActivityLevel):
     except KeyError:
         raise Exception("Invalid Activity Level parameter. \
             Please enter a number from 1 (sedentary) to 4 (very active))")
-def weightLossOrGainCalculator(TDEE, lossOrGain):
+def weightLossOrGainCalculator(TDEE, lossOrGain='l'):
     '''
     calculates daily calorie consumption needed to lose or gain based on a user's TDEE
 
