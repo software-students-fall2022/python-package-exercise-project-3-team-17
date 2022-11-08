@@ -18,9 +18,9 @@ def test_howfat_valid_metric():
     actual = howfat(25, 180, 67, "m")
     actual2 = howfat(24, 188, 72, "m")
     actual3 = howfat(41, 170, 92, "m")
-    assert actual==(20.68, 'You are healthy'), "howfat() did not return expected BMI"
-    assert actual2==(20.37, 'You are healthy'), "howfat() did not return expected BMI"
-    assert actual3==(31.83, 'You are obese'), "howfat() did not return expected BMI"
+    assert actual==(20.68,'You are healthy'), "howfat() did not return expected BMI"
+    assert actual2==(20.37,'You are healthy'), "howfat() did not return expected BMI"
+    assert actual3==(31.83,'You are obese'), "howfat() did not return expected BMI"
 
 def test_howfat_valid_imperial():
     #imperial arguments valid
