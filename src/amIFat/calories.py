@@ -13,8 +13,8 @@ def convertScale(height,weight):
         return -1,-1
     if weight<1 or weight>1400:
         return -1,-1
-    height=height*2.54
-    weight=weight*0.45359237
+    height=float(round(height*2.54,2))
+    weight=float(round(weight*0.45359237,8))
     return height,weight
 
 
@@ -100,5 +100,4 @@ def calories(age,gender,height,weight,activityLevel,scale):
 
 
     
-
 
