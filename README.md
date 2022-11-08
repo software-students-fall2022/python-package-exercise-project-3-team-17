@@ -163,7 +163,7 @@ This is a lightweight, health-focused package that offers the following function
 1. Navigate to your desired root directory and execute 
 
 ```
-pipenv install -i https://test.pypi.org/simple/ amIFat==0.0.7
+pipenv install -i https://test.pypi.org/simple/ amIFat==1.0.5
 ```
 
 (Prof B's note: if you've previously created a pipenv virtual environment in the same directory, you may have to delete the old one first. Find out where it is located with the pipenv --venv command.)
@@ -184,4 +184,3 @@ python3 yourProgram.py
 ```
 5. Exit the virtual environment with ```exit```
 
-## How to Run Unit Tests
