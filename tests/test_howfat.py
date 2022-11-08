@@ -50,6 +50,9 @@ def test_howfat_invalid_parameters():
         howfat(62,70.2,200, "i")
         #invalid scale paramter
         howfat(25,173,56, "j")
+        #null param handling
+        howfat(None,None,None,None)
+        howfat(None,None,20,None)
 
 
 #--------------Helper Function tests-------------------------------#
