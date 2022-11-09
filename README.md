@@ -197,6 +197,12 @@ python3 yourProgram.py
 
 5. Exit the virtual environment with `exit`
 
+### How to Run Example App
+
+```
+python3 src/amIFatApp/app.py
+```
+
 ## Authors
 
 -   <a href="https://github.com/shl622">Lee, Brian</a>
