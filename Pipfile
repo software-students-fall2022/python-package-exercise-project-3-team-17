@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 pytest = "*"
-
+amIFat = {editable = true, path = "."}
 [dev-packages]
 
 [requires]
