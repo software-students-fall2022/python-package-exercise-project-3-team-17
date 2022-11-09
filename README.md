@@ -28,16 +28,16 @@ This is a lightweight, health-focused package that offers the following function
 
     /More details about parameters:
 
-    * age- integer value representing age
-    * height- integer value representing height
-        * metric - integer value in (cm)
-        * imperial - integer value in (in)
-    * weight- integer value representing weight
-        * metric - integer value in (kg)
-        * imperial - integer value in (lb)
+    * age - integer value representing age
+    * height - numeric value representing height
+        * metric - float value in (cm)
+        * imperial - float value in (in)
+    * weight- numeric value representing weight
+        * metric - float value in (kg)
+        * imperial - float value in (lbs)
     * scale
-        "i" for imperial
-        "m" for metric
+        * "i" for imperial
+        * "m" for metric
     
     /Disclosure:
     BMI and its respective obesity scale may not reflect a precise overview of one's health conditions, especially for ages under 18 and above 65.
@@ -60,12 +60,16 @@ This is a lightweight, health-focused package that offers the following function
 
     /More details about parameters
 
-    * age- numeric value (integer) representing age
+    * age - integer value representing age
     * gender
-        "f" for female
-        "m" for male
-    * height- numeric value representing height
-    * weight- numeric value representing weight
+        * "f" for female
+        * "m" for male
+    * height - numeric value representing height
+        * metric - float value in (cm)
+        * imperial - float value in (in)
+    * weight - numeric value representing weight
+        * metric - float value in (kgs)
+        * imperial - float value in (lbs)
     * activityLevel- numeric value (integer) representing a user's activity level
         Use scale below:
         0-Basal Metabolic Rate
@@ -75,12 +79,8 @@ This is a lightweight, health-focused package that offers the following function
         4-Active: exercise 6-7 times a week
         5-Very active: hard exercise 6-7 times a week
     * scale
-        "i" for imperial
-        "m" for metric
-
-
-    
-
+        * "i" for imperial
+        * "m" for metric
 
 </details>
 
@@ -92,15 +92,19 @@ This is a lightweight, health-focused package that offers the following function
     
     More details about parameters:
 
-    * age - numeric value (integer) representing age
+    * age - integer value representing age
     * gender
         "f" for female
         "m" for male
     * height - numeric value representing height
+        * metric - float value in (cm)
+        * imperial - float value in (in)
     * weight - numeric value representing weight
+         * metric - float value in (kgs)
+        * imperial - float value in (lbs)
     * scale
-        "i" for imperial
-        "m" for metric
+        * "i" for imperial
+        * "m" for metric
     
 </details>
 
@@ -135,11 +139,15 @@ This is a lightweight, health-focused package that offers the following function
     More details about parameters
 
     * weight - numeric value representing weight
+    q   * metric - float value in (kgs)
+        * imperial - float value in (lbs)
 
     * lossOrGain
-        'l' for loss - aiming to lose weight
-        'g' for gain - aiming to gain weight
+        * 'l' for loss - aiming to lose weight
+        * 'g' for gain - aiming to gain weight
     * scale
+        * "i" for imperial
+        * "m" for metric
 
     
 </details>
@@ -155,8 +163,8 @@ This is a lightweight, health-focused package that offers the following function
     * TDEE - total daily energy expenditure in calories (amount of energy your body burns in a day)
 
     * lossOrGain
-        'l' for loss - aiming to lose weight
-        'g' for gain - aiming to gain weight
+        * 'l' for loss - aiming to lose weight
+        * 'g' for gain - aiming to gain weight
     
 </details>
 
