@@ -4,7 +4,6 @@ A little exercise to create a Python package, build it, test it, distribute it, 
 
 [![Build & test](https://github.com/software-students-fall2022/python-package-exercise-project-3-team-17/actions/workflows/build.yaml/badge.svg?)](https://github.com/software-students-fall2022/python-package-exercise-project-3-team-17/actions/workflows/build.yaml)
 
-
 ## Description
 
 [Official Documentation](https://pypi.org/project/amIFat/#description) <br>
@@ -38,10 +37,10 @@ This is a lightweight, health-focused package that offers the following function
     * scale
         * "i" for imperial
         * "m" for metric
-    
+
     /Disclosure:
     BMI and its respective obesity scale may not reflect a precise overview of one's health conditions, especially for ages under 18 and above 65.
-    
+
 </details>
 
 <details>
@@ -89,7 +88,7 @@ This is a lightweight, health-focused package that offers the following function
 <summary>Calculate a user's resting energy expenditure</summary>
 
     calculateREE(age, gender, height, weight, scale):
-    
+
     More details about parameters:
 
     * age - integer value representing age
@@ -105,7 +104,7 @@ This is a lightweight, health-focused package that offers the following function
     * scale
         * "i" for imperial
         * "m" for metric
-    
+
 </details>
 
 <details>
@@ -113,7 +112,7 @@ This is a lightweight, health-focused package that offers the following function
 <summary>Calculate a user's total daily energy expenditure</summary>
 
     calculateTDEE(REE, userActivityLevel)
-    
+
     More details about parameters
 
     * REE - Resting Energy Expenditure in calories (how many calories burned at rest)
@@ -125,9 +124,9 @@ This is a lightweight, health-focused package that offers the following function
         2 - Lightly active: Any activity that burns an additional 200-400 calories for females or 250-500 calories for males. (REE x 1.375)
 
         3 - Moderately active: Any activity that burns an additional 400-650 calories for females or 500-800 calories for males. (REE x 1.55)
-        
+
         4 - Very Active: Any activity that burns an additional 650+ calories for females or 800+ calories for males. (REE x 1.725)
-    
+
 </details>
 
 <details>
@@ -135,7 +134,7 @@ This is a lightweight, health-focused package that offers the following function
 <summary>Calculate a user's target TDEE for weight loss or gain</summary>
 
     weightLossOrGainCalculator(TDEE, lossOrGain)
-    
+
     More details about parameters
 
     * weight - numeric value representing weight
@@ -149,7 +148,6 @@ This is a lightweight, health-focused package that offers the following function
         * "i" for imperial
         * "m" for metric
 
-    
 </details>
 
 <details>
@@ -157,7 +155,7 @@ This is a lightweight, health-focused package that offers the following function
 <summary>Calculate ideal macronutrient ratios for a given weight and TDEE</summary>
 
     macros(weight, targetTDEE, scale)
-    
+
     More details about parameters
 
     * TDEE - total daily energy expenditure in calories (amount of energy your body burns in a day)
@@ -165,12 +163,12 @@ This is a lightweight, health-focused package that offers the following function
     * lossOrGain
         * 'l' for loss - aiming to lose weight
         * 'g' for gain - aiming to gain weight
-    
+
 </details>
 
 ## How to Install and Use this Package
 
-1. Navigate to your desired root directory and execute 
+1. Navigate to your desired root directory and execute
 
 ```
 pip install amIFat
@@ -179,19 +177,29 @@ pipenv install -i https://pypi.org/simple/amIFat==1.0.6
 
 (Prof B's note: if you've previously created a pipenv virtual environment in the same directory, you may have to delete the old one first. Find out where it is located with the pipenv --venv command.)
 
-2. Activate virtual environment with 
+2. Activate virtual environment with
+
 ```
 pipenv shell
 ```
-3. Create a python program in the directory and import all the functions in the ```amIFat``` package with 
+
+3. Create a python program in the directory and import all the functions in the `amIFat` package with
 
 ```
 from amIFat import macros, howfat, calories, fat_problems
 ```
-4. Implement the functions in your program and run it with 
+
+4. Implement the functions in your program and run it with
 
 ```
 python3 yourProgram.py
 ```
-5. Exit the virtual environment with ```exit```
 
+5. Exit the virtual environment with `exit`
+
+## Authors
+
+-   <a href="https://github.com/shl622">Lee, Brian</a>
+-   <a href="https://github.com/bpointi">Pointi, Bhavig</a>
+-   <a href="https://github.com/mishaseo">Seo, Misha</a>
+-   <a href="https://github.com/sagynbek001">Talgatuly, Sagynbek</a>
