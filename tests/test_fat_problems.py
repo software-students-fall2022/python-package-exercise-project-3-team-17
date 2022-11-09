@@ -1,47 +1,67 @@
-from amIFat.macros import *
-from amIFat.calories import *
-from amIFat.howfat import *
 from amIFat.fat_problems import *
+import random
+import pytest
 
-def main():
-    #howfat
-    print("Module: howfat")
-    print('Testing howfat(age, height, weight, scale) with age=25, height=72, weigh=190, scale="i" ')
-    print('Returning bmi score and obesity scale')
-    print(howfat(25,72, 190, "i"))
-    print("-------------------------------------------------------------------------------------------------------")
+diseases_list = [
+    '',
+    'diabetes',                     #1
+    'hypertension',                 #2
+    'CVD',                          #3
+    'heart disease',                #4
+    'stroke',                       #5
+    'gallbladder disease',          #6
+    'osteoarthritis',               #7
+    'sleep apnea',                  #8
+    'breathing problems',           #9
+    'cancer',                       #10
+    'depression',                   #11
+    'anxiety',                      #12
+    'mental disorders',             #13
+    'body pain',                    #14
+    'flatty lever diseases',        #15
+    'metabolic syndrome',           #16
+    'eye diseases',                 #17
+    'kidney diseases',              #18
+    'malnutrition',                 #19
+    'osteoporosis',                 #20
+    'decreased muscle strength',    #21
+    'hypothermia' ,                 #22
+    'lowered immunity'              #23
+]
 
-    #calories
-    print("Module: calories")
-    print('\nTesting calories(age, gender, height, weight, activityLevel, scale) with age=22, gender= "f", height=63, weigh=120, activityLevel=2, scale="i" ')
-    print('Returning daily calorie intake (Active Metabolic Rate)')
-    print(calories(22,"f",63,120,2,"i"))
-    print("-------------------------------------------------------------------------------------------------------")
-    
-    #macros
-    print("Module: macros")
-    print("\nTesting calculateREE(age, gender, height, weight, scale) with age=21, gender='m', height=175, weight=80, scale='m' ")
-    print('Returning resting energy expenditure ')
-    ree=calculateREE(21, 'm', 175, 80, 'm')
-    print(ree)
-    
-    print("\nTesting calculateTDEE(REE, userActivityLevel) with REE=" + str(ree) + ", userActivityLevel=4")
-    print('Returning total daily energy expenditure')
-    print(calculateTDEE(ree, 4))
+levels_list = [
+    '',
+    'low',              #1
+    'medium',           #2
+    'increased',        #3
+    'high',             #4
+    'very high',        #5
+    'extremely high'    #6
+]
 
-    print("\nTesting weightLossOrGainCalculator(TDEE, lossOrGain) with TDEE=50, lossOrGain='g' ")
-    print('Returning target TDEE for weight loss or gain')
-    print(weightLossOrGainCalculator(50, 'g'))
+#---------------Calculation Tests with valid parameters----------------#
+def test_output_type():
+    outputs = []
+    outputs.append(fat_problems(13.0))
+    outputs.append(fat_problems(16.0))
+    outputs.append(fat_problems(19.0))
+    outputs.append(fat_problems(27.0))
+    outputs.append(fat_problems(37.0))
+    outputs.append(fat_problems(47.0))
+    outputs.append(fat_problems(55.0))
+    for output in outputs:
+        assert type(output) is dict
+        for disease_risk in output:
+            assert type(disease_risk) is str
+            assert disease_risk in diseases_list
+            assert type(output[disease_risk]) is str            
+            assert output[disease_risk] in levels_list
 
-    print("\nTesting macros(weight, targetTDEE, scale) with weight=36.2811791383, targetTDEE=3000000, scale='m'")
-    print("Returning ideal macronutrient ratios for a given weight and TDEE")
-    print(macros(36.2811791383, 3000000, 'm'))
-
-    #fat_problems
-    print("Module: fat_problems")
-    print('\nTesting fat_problems(bmi) with bmi=32.0 ')
-    print('Returning the diseases with risk levels')
-    print(fat_problems(32.0))
-    print("-------------------------------------------------------------------------------------------------------")    
-   
-main()
+#--------------Invalid Arguments Exception Tests---------------------#
+def test_fat_problems_invalid_parameters():
+    with pytest.raises(Exception):
+        fat_problems(-1.0)
+        fat_problems("bmi")
+        fat_problems(5.0)
+        fat_problems(55.0)
+        fat_problems(None)
