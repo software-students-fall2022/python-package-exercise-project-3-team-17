@@ -48,7 +48,6 @@ def test_output_type():
     outputs.append(fat_problems(27.0))
     outputs.append(fat_problems(37.0))
     outputs.append(fat_problems(47.0))
-    outputs.append(fat_problems(55.0))
     for output in outputs:
         assert type(output) is dict
         for disease_risk in output:
