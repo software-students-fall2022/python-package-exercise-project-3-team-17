@@ -19,14 +19,6 @@ def convertScale(height,weight):
 
 
 #------------------------------------calories()--------------------------------------
-'''activityLevel 
-    *0-Basal Metabolic Rate
-    *1-Sedentary: little or no exercise
-    *2-Lightly active: exercise 1-3 times a week
-    *3-Moderately active: exercise 3-5 times a week
-    *4-Active: exercise 6-7 times a week
-    *5-Very active: hard exercise 6-7 times a week
-'''
 #Calculates the user's recommended daily calorie intake based on their AMR
 def calories(age,gender,height,weight,activityLevel,scale):
     #^^^^^^^^^^INVALID INPUT CATCHES^^^^^^^^^^
