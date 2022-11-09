@@ -36,6 +36,17 @@ levels_list = [
 ]
 
 def fat_problems(bmi):
+
+    #validate number
+    if not isinstance(bmi, float):
+        raise Exception('Please make sure bmi is of type float')
+        return
+    
+    if bmi < 10.0 or 50.0 < bmi:
+        raise Exception('Please make sure bmi is in the range of 10.0 and 50.0 inclusive')
+        return
+
+
     # data structures initialisation
     diseasesWithRiskLevel = {}
     diseases = []
