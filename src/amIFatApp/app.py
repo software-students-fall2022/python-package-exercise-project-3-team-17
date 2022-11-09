@@ -1,6 +1,7 @@
 from amIFat.macros import *
 from amIFat.calories import *
 from amIFat.howfat import *
+from amIFat.fat_problems import *
 
 def main():
     #howfat
@@ -9,12 +10,14 @@ def main():
     print('Returning bmi score and obesity scale')
     print(howfat(25,72, 190, "i"))
     print("-------------------------------------------------------------------------------------------------------")
+
     #calories
     print("Module: calories")
     print('\nTesting calories(age, gender, height, weight, activityLevel, scale) with age=22, gender= "f", height=63, weigh=120, activityLevel=2, scale="i" ')
     print('Returning daily calorie intake (Active Metabolic Rate)')
     print(calories(22,"f",63,120,2,"i"))
     print("-------------------------------------------------------------------------------------------------------")
+    
     #macros
     print("Module: macros")
     print("\nTesting calculateREE(age, gender, height, weight, scale) with age=21, gender='m', height=175, weight=80, scale='m' ")
@@ -34,7 +37,11 @@ def main():
     print("Returning ideal macronutrient ratios for a given weight and TDEE")
     print(macros(36.2811791383, 3000000, 'm'))
 
-
-    
+    #fat_problems
+    print("Module: fat_problems")
+    print('\nTesting fat_problems(bmi) with bmi=32.0 ')
+    print('Returning the diseases with risk levels')
+    print(fat_problems(32.0))
+    print("-------------------------------------------------------------------------------------------------------")    
    
 main()
