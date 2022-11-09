@@ -172,7 +172,7 @@ This is a lightweight, health-focused package that offers the following function
 
 ```
 pip install amIFat
-pipenv install -i https://pypi.org/simple/amIFat==1.0.6
+pipenv install -i https://pypi.org/simple/amIFat==1.0.7
 ```
 
 (Prof B's note: if you've previously created a pipenv virtual environment in the same directory, you may have to delete the old one first. Find out where it is located with the pipenv --venv command.)

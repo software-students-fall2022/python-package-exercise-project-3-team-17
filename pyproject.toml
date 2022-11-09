@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "amIFat"
 description = "An example of a package developed with pyenv, built with build using setuptools, uploaded to PyPI using twine, and distributed via pip."
-version = "1.0.6"
+version = "1.0.7"
 authors = [
   {name="bhavig", email="bob@hamsterdam.com" },
   {name="brian", email="brian@lee.com"},
