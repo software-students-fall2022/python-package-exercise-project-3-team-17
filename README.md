@@ -171,8 +171,7 @@ This is a lightweight, health-focused package that offers the following function
 1. Navigate to your desired root directory and execute
 
 ```
-pip install amIFat
-pipenv install -i https://pypi.org/simple/amIFat==1.0.7
+pipenv install -i https://pypi.org/simple/amIFat==1.1.0
 ```
 
 (Prof B's note: if you've previously created a pipenv virtual environment in the same directory, you may have to delete the old one first. Find out where it is located with the pipenv --venv command.)
@@ -186,16 +185,27 @@ pipenv shell
 3. Create a python program in the directory and import all the functions in the `amIFat` package with
 
 ```
-from amIFat import macros, howfat, calories, fat_problems
+//some imports you can make
+from amIFat.macros import *
+from amIFat.calories import *
+from amIFat.howfat import *
+from amIFat.fat_problems import *
 ```
 
-4. Implement the functions in your program and run it with
+4. Install the amIFat package with
 
 ```
-python3 yourProgram.py
+pipenv install amifat
+```
+ensure that the package is installed in your pipenv with ```pip list```
+
+5. Implement the functions in your program and run it with
+
+```
+python3 path/to/yourProgram.py
 ```
 
-5. Exit the virtual environment with `exit`
+6. Exit the virtual environment with `exit`
 
 ### How to Run Example App
 
